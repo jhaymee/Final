@@ -1,0 +1,79 @@
+
+STORY:
+
+scenes are separated by choice. each scene might have more than 1 choice but they will always only have 1 meaningful choice that triggers another scene
+
+scene OPENING:
+You awake in a white room. A normal looking man in front of you holds a clipboard, and he asks:
+"How are you feeling?"
+You respond with:
+1: "I'm...fine."
+2: "Who are you and where am I?"
+	1: "Good. That's good. We should get started. *Trigger scene DOORS
+	2: "Let's jump right in." *Trigger scene DOORS
+scene DOORS:
+He takes out a piece of glossy paper out of his pocket and hands it to you. On it, there are two pictures, side by side. One is a Cactus in a pot,
+and the other is a clock with legs.
+"Which one feels more meaningful to you?" He asks.
+1: Cactus
+2: Clock
+	1 or 2: He leads you to a door, letting you go in first. You thank him, and he closes the door behind you, leaving you alone in the hallway.
+
+CACTUS:
+scene townSquare:
+Upon walking through the hallway, you come out of an alley into what seems like the center of a small village. The people hustle and bustle around you,
+paying you no mind. Where do you go first?
+	1: The Bakery
+	2: The Fortune Teller
+scene bakery:
+
+
+		
+
+CLOCK:
+scene city:
+After walking the hallway, you come to a dead end. As you try feeling the walls around you, a *ding* sounds behind you and you begin to have
+a funny feeling in your stomach. You were in an elevator. And going down.
+When the elevator doors open and you get out, you are greeted by buildings so high that you can't see where they end. There are roads connecting these buildings,
+but there seem to be no one who is using them. No cars, no horses, nothing.
+What do you do?
+	1: Walk until you find someone
+	2: Break into the house near you
+
+scene walk:
+While walking, you feel eyes on you. You then hear distant music, so you follow it.
+You come to a dirt road, and at the end of it is a tower.
+You go into the tower.
+
+scene breakIn:
+You smash the window of someone's house. When you get in, someone greets you.
+It's a peculiar man, who looks to have a head too big for his body.
+He asks: "It's alright," he smiles. "Everyone is nervous when they first get here--Don't blame ya. We tend to stay in when we know
+someone's arriving. You know, just to ease them into it."
+Something about him doesn't seem right.
+You look at him one more time as your eyes begin to feel heavy.
+"You'll get it right next time."
+The next thing you feel is the cold, hard ground.
+*trigger scene OPENING
+
+scene tower:
+
+
+FORTUNE TELLER:
+scene fortuneTeller:
+As you walk up to the fortune teller's stall, she smiles at you.
+Despite her rugged appearance, her voice is soft and melodic.
+"What are you looking for?" She asks.
+You respond with a shrug, "Whatever fortune telling you can give me."
+"For free, I can let you roll a die and tell you what it means for your future here."
+The end of that sentence isn't lost on you--she had emphasized the word *here*. But you brush it off. "I'll take it," you reply.
+She gives you the die.
+Button: ROLL
+random number between 1-6
+	1:
+
+
+
+
+
+
