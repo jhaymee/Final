@@ -14,8 +14,8 @@ void setup() {
     dungeonFont = createFont("DungeonFont.ttf", 18);
     // BUTTONS
     // opening buttons
-    button0 = new Button(17,480,width-40, 50, "Who are you and where am I?",0);
-    button1 = new Button(17,530,width-40, 50, "I'm...fine.", 1);
+    button0 = new Button(17,480,width-40, 50, "Who are you and where am I?",100);
+    button1 = new Button(17,530,width-40, 50, "I'm...fine.", 200);
     // door buttons
     button2 = new Button(17,480,width-40, 50, "Cactus.", 2);
     button3 = new Button(17,530,width-40, 50, "Clock.", 3);
@@ -23,7 +23,7 @@ void setup() {
     button4 = new Button(17,480,width-40, 50, "Fortune teller", 4);
     button5 = new Button(17,480,width-40, 50, "Bakery", 5);
 
-    button6 = new Button(17,530,width-40, 50, "I'm...fine.", 6);
+    button6 = new Button(17,530,width-40, 50, "", 6);
     // IMAGES
     bigHead = loadImage("big head.png");
     cactus = loadImage("cactus.png");
@@ -50,8 +50,11 @@ void setup() {
 void draw() {
     background(242, 241, 240);
     imageMode(CENTER);
-    choice = 1;
+    choice = 0;
     switch (choice) {
+        case 0:
+            opening();
+            break;
         case 1:
             doors();
             break;
@@ -117,7 +120,10 @@ void opening() {
     if (nextState == true) {
         erase();
         dialogue("You respond with:");
+        button0.display();
+        button1.display();
         nextState = false;
+        noLoop();
     }
 }
 
@@ -141,7 +147,7 @@ void doors() {
 
 void city() {
     background(242, 241, 240);
-    dialogue("After walking the hallway, you come to a dead end. As you try feeling the walls around you, you hear a ding.\nYou were in an elevator. And going down.\nWhen the elevator doors open and you get out,\n you are greeted by high buildings with roads connecting them. The place seems to be empty, though.\nWhat do you do?");
+    dialogue("After walking the hallway, you come to a dead end. As you try feeling\nthe walls around you, you hear a ding. You were in an elevator. And going down.\nWhen the elevator doors open and you get out,\n you are greeted by high buildings with roads connecting them.\nThe place seems to be empty, though.\nWhat do you do?");
     if (nextState == true) {
         // display choices
     }
@@ -179,6 +185,8 @@ void townSquare() {
     dialogue("It's crowded in here. There are two stalls that call to you--One is the bakery,\nthe other a fortune teller. Where do you want to go?");
     if (nextState == true) {
         // display choice: fortune teller or bakery
+        button4.display();
+        button5.display();
         print("test");
     }
 }
@@ -188,7 +196,7 @@ void bakery() {
     dialogue("The smell of warm bread draws you in.\nThe robot (Wait. Robot?) behind the counter makes a comment:\n\"New around here, eh?\"");
     if (nextState == true) {
         erase();
-        dialogue("You get a strange feeling in your gut. When the robot, who has introduced himself as Azule,\nreads your face, he says, \"I know that look. Don't trust it. Trust me.\"\nDo you:");
+        dialogue("You get a strange feeling in your gut. When the robot, who has introduced himself\nas Azule, reads your face, he says, \"I know that look. Don't trust it. Trust me.\"\nDo you:");
         // display choices: trust him or not trust him
         nextState = false;
         noLoop();
@@ -224,7 +232,7 @@ public class Button {
         text(content, x + w/2, y + (h/2));
     }
 
-    public void pressed(int mx, int my) { // maybe make the sceneId the parameter? so it can change into the choice when clicked
+    public void pressed(int mx, int my) { 
         if(mx > x && mx < x + w  && my > y && my < y+h) {
         //mouse has been clicked
         clicked = !clicked;  //toggle the value between true and false
